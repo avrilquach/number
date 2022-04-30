@@ -3,15 +3,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import styles from '../styles/Home.module.css'
-import _ from "lodash"
+import _ from 'lodash'
 import { userInfo } from 'os'
 import { setDefaultResultOrder } from 'dns'
 
-
 function App(){
-  const [result, setResult] = useState();
-  const [number1,setNumber1]=useState();
-  const [number2,setNumber2]=useState([]);
+  const [max1,setMax1] = useState('');
+  const [max2,setMax2] = useState('');
+  const [max3,setMax3] = useState('');
+  const [number1,setNumber1]=useState('');
+  const [number2,setNumber2]=useState('');
   const [number3,setNumber3]=useState('');
   const [number4,setNumber4]=useState('');
   const [number5,setNumber5]=useState('');
@@ -81,213 +82,14 @@ function App(){
   const [number67,setNumber67]=useState('');
   const [number68,setNumber68]=useState('');
   const [number69,setNumber69]=useState('');
-  const handleChange1 = (e) => {
+  const handleChange1 = (e:any) => {
     setNumber1(e.target.value);
   }
-  const handleChange2 = (e) => {
+  const handleChange2 = (e:any) => {
     setNumber2(e.target.value);
   }
-  const handleChange3 = (e) => {
+  const handleChange3 = (e:any) => {
     setNumber3(e.target.value);
-  }
-  const handleChange4 = (e) => {
-    setNumber4(e.target.value);
-  }
-  const handleChange5 = (e) => {
-    setNumber5(e.target.value);
-  }
-  const handleChange6 = (e) => {
-    setNumber6(e.target.value);
-  }
-  const handleChange7 = (e) => {
-    setNumber7(e.target.value);
-  }
-  const handleChange8 = (e) => {
-    setNumber8(e.target.value);
-  }
-  const handleChange9 = (e) => {
-    setNumber9(e.target.value);
-  }
-  const handleChange10 = (e) => {
-    setNumber10(e.target.value);
-  }
-  const handleChange11 = (e) => {
-    setNumber11(e.target.value);
-  }
-  const handleChange12 = (e) => {
-    setNumber12(e.target.value);
-  }
-  const handleChange13 = (e) => {
-    setNumber13(e.target.value);
-  }
-  const handleChange14 = (e) => {
-    setNumber14(e.target.value);
-  }
-  const handleChange15 = (e) => {
-    setNumber15(e.target.value);
-  }
-  const handleChange16 = (e) => {
-    setNumber16(e.target.value);
-  }
-  const handleChange17 = (e) => {
-    setNumber17(e.target.value);
-  }
-  const handleChange18 = (e) => {
-    setNumber18(e.target.value);
-  }
-  const handleChange19 = (e) => {
-    setNumber19(e.target.value);
-  }
-  const handleChange20 = (e) => {
-    setNumber20(e.target.value);
-  }
-  const handleChange21 = (e) => {
-    setNumber21(e.target.value);
-  }
-  const handleChange22 = (e) => {
-    setNumber22(e.target.value);
-  }
-  const handleChange23 = (e) => {
-    setNumber23(e.target.value);
-  }
-  const handleChange24 = (e) => {
-    setNumber24(e.target.value);
-  }
-  const handleChange25 = (e) => {
-    setNumber25(e.target.value);
-  }
-  const handleChange26 = (e) => {
-    setNumber26(e.target.value);
-  }
-  const handleChange27 = (e) => {
-    setNumber27(e.target.value);
-  }
-  const handleChange28 = (e) => {
-    setNumber28(e.target.value);
-  }
-  const handleChange29 = (e) => {
-    setNumber29(e.target.value);
-  }
-  const handleChange30 = (e) => {
-    setNumber30(e.target.value);
-  }
-  const handleChange31 = (e) => {
-    setNumber31(e.target.value);
-  }
-  const handleChange32 = (e) => {
-    setNumber32(e.target.value);
-  }
-  const handleChange33 = (e) => {
-    setNumber33(e.target.value);
-  }
-  const handleChange34 = (e) => {
-    setNumber34(e.target.value);
-  }
-  const handleChange35 = (e) => {
-    setNumber35(e.target.value);
-  }
-  const handleChange36 = (e) => {
-    setNumber36(e.target.value);
-  }
-  const handleChange37 = (e) => {
-    setNumber37(e.target.value);
-  }
-  const handleChange38 = (e) => {
-    setNumber38(e.target.value);
-  }
-  const handleChange39 = (e) => {
-    setNumber39(e.target.value);
-  }
-  const handleChange40 = (e) => {
-    setNumber40(e.target.value);
-  }
-  const handleChange41 = (e) => {
-    setNumber41(e.target.value);
-  }
-  const handleChange42 = (e) => {
-    setNumber42(e.target.value);
-  }
-  const handleChange43 = (e) => {
-    setNumber43(e.target.value);
-  }
-  const handleChange44 = (e) => {
-    setNumber44(e.target.value);
-  }
-  const handleChange45 = (e) => {
-    setNumber45(e.target.value);
-  }
-  const handleChange46 = (e) => {
-    setNumber46(e.target.value);
-  }
-  //
-  const handleChange47 = (e) => {
-    setNumber47(e.target.value);
-  }
-  const handleChange48 = (e) => {
-    setNumber48(e.target.value);
-  }
-  const handleChange49 = (e) => {
-    setNumber49(e.target.value);
-  }
-  const handleChange50 = (e) => {
-    setNumber50(e.target.value);
-  }
-  const handleChange51 = (e) => {
-    setNumber51(e.target.value);
-  }
-  const handleChange52 = (e) => {
-    setNumber52(e.target.value);
-  }
-  const handleChange53 = (e) => {
-    setNumber53(e.target.value);
-  }
-  const handleChange54 = (e) => {
-    setNumber54(e.target.value);
-  }
-  const handleChange55 = (e) => {
-    setNumber55(e.target.value);
-  }
-  const handleChange56 = (e) => {
-    setNumber56(e.target.value);
-  }
-  const handleChange57 = (e) => {
-    setNumber57(e.target.value);
-  }
-  const handleChange58 = (e) => {
-    setNumber58(e.target.value);
-  }
-  const handleChange59 = (e) => {
-    setNumber59(e.target.value);
-  }
-  const handleChange60 = (e) => {
-    setNumber60(e.target.value);
-  }
-  const handleChange61 = (e) => {
-    setNumber61(e.target.value);
-  }
-  const handleChange62 = (e) => {
-    setNumber62(e.target.value);
-  }
-  const handleChange63 = (e) => {
-    setNumber63(e.target.value);
-  }
-  const handleChange64 = (e) => {
-    setNumber64(e.target.value);
-  }
-  const handleChange65 = (e) => {
-    setNumber65(e.target.value);
-  }
-  const handleChange66 = (e) => {
-    setNumber66(e.target.value);
-  }
-  const handleChange67 = (e) => {
-    setNumber67(e.target.value);
-  }
-  const handleChange68 = (e) => {
-    setNumber68(e.target.value);
-  }
-  const handleChange69 = (e) => {
-    setNumber69(e.target.value);
   }
   const handleNumber = () => {
     //const data = [number1,number2,number3,number4,number5,number6,number7,number8,number9,number10,number11,number12,number13,number14,number15,number16,number17,number18,number19,number20,number21,number22,number23];
@@ -303,10 +105,12 @@ function App(){
     const result = _.values(_.groupBy(data[0])).map(d => ({number: d[0], count: d.length}));
     const result2 = _.values(_.groupBy(data2[0])).map(d => ({number: d[0], count: d.length}));
     const result3 = _.values(_.groupBy(data3[0])).map(d => ({number: d[0], count: d.length}));
-    const max1 = _.maxBy(result, function(o) { return o.count; });
-    const max2 = _.maxBy(result2, function(o) { return o.count; });
-    const max3 = _.maxBy(result3, function(o) { return o.count; });
-    setResult(max1.number+max2.number+max3.number);
+    const m1 = _.maxBy(result, function(o) { return o.count; });
+    const m2 = _.maxBy(result2, function(o) { return o.count; });
+    const m3 = _.maxBy(result3, function(o) { return o.count; });
+    setMax1(m1? m1.number: '');
+    setMax2(m2? m2.number: '');
+    setMax3(m3? m3.number: '');
     const result_ct1 = result.map(a => (  
       a.count == 1 ? a.number: null
     ))
@@ -348,7 +152,7 @@ function App(){
         </div>
         <button type="button" onClick={handleNumber}>Check</button>
         <div style={{color:"#ff0000", fontSize:"20px"}}>
-          {result}
+          {max1}{max2}{max3}
         </div>
          
       </main>
