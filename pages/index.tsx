@@ -2,10 +2,10 @@ import Head from 'next/head'
 import React, {ReactElement, ReactNode, useEffect, useMemo, useState} from "react"
 import styles from '../styles/Home.module.css'
 import _ from "lodash";
-import {number} from "prop-types";
+import {element, number} from "prop-types";
 function App(){
-  const [number1, setNumber1] = useState([9,45,99,77,43,75,56,39,24,48,23,38,97,69,79,13,64,14,47,91,48,4,59,77,66,1,59])
-  const [number2, setNumber2] = useState([9,45,99,77,43,75,56,39,24,48,23,38,97,69,79,13,64,14,47,91,48,4,59,77,66,1,59])
+  const [number1, setNumber1] = useState([17,71,55,58,80,9,92,75,77,74,14,44,63,33,56,65,18,88,87,95,87,72,31,32,46,13,1])
+  const [number2, setNumber2] = useState(number1)
     const [arr,setArr] = useState<any>([])
   useEffect(() => {
     if(number1 && number2){
@@ -22,16 +22,81 @@ function App(){
     }
   }, [number1,number2])
     const handleSubmit = () =>{
-        const result:any = [];
+        const result:any = []
         arr.reduce(function (res:any, value:any) {
             if (!res[value.number]) {
-                res[value.number] = { number: value.number, qty: 0 };
-                result.push(res[value.number]);
+                res[value.number] = { number: value.number, qty: 0 }
+                result.push(res[value.number])
             }
-            res[value.number].qty += value.qty;
-            return res;
+            res[value.number].qty += value.qty
+            return res
         }, {});
-        console.log(result);
+        const max = maxQty(result)
+        console.log('max',max)
+
+        for(let i = 0; i<result.length ;i++){
+            if(result[i].qty == max){
+                let number = result[i].number
+                console.log(number)
+                if(number.toString().length == 3){
+                    // Tỷ lệ Công Thức 1
+                    congthuc1(number)
+                }
+                if(number.toString().length == 2){
+                    // Tỷ lệ Công Thức 3 Nếu có 1 số không đảo lại
+                    congthuc3(number)
+                }
+            }
+        }
+    }
+    // Function Cong Thuc 1
+    const congthuc1 = (number:number) =>{
+        let first = number.toString().slice(0, 1);
+        let second = number.toString().slice(1, 2);
+        let third = number.toString().slice(2, 3);
+        // Công Thuc 1 tính 2 số
+        if(parseInt(first) != parseInt(second) &&  parseInt(second) != parseInt(third) &&  parseInt(first) != parseInt(third)){
+            congthuc2(number)
+        }
+        if(parseInt(first) == parseInt(second)||parseInt(first) == parseInt(third)||parseInt(second) == parseInt(third)){
+            console.log('kha nang cao ngay hom toi')
+            console.log('congthuc1',number)
+        }
+    }
+    // Function Cong Thuc 2
+    const congthuc2 = (number:number) =>{
+        let first = number.toString().slice(0, 1);
+        let second = number.toString().slice(1, 2);
+        let third = number.toString().slice(2, 3);
+        //let total = third+""+second+""+first
+        console.log('kha nang cao ngay hom nay')
+        console.log('congthuc2',number)
+    }
+    // Function Cong Thuc 3
+    const congthuc3 = (number:number) =>{
+        console.log('kha nang cao')
+        console.log('congthuc3',number)
+    }
+    // Function Get Max Qty
+    const maxQty = (result:any) =>{
+        let maxqty = 0
+        for(let i = 0; i<result.length ;i++){
+            if (result[i].qty>maxqty) {
+                maxqty = result[i].qty
+            }
+        }
+        return maxqty
+    }
+    // Function Get Min Qty
+    const minQty = (result:any) =>{
+        let al = result.length;
+        let minqty = result[al-1];
+        for(let i = 0; i<result.length ;i++){
+            if (result[i].qty<minqty) {
+                minqty = result[i].qty
+            }
+        }
+        return minqty
     }
   return (
       <div className={styles.container}>
